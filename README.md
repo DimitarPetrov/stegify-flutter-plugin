@@ -8,7 +8,7 @@ This technique is known as LSB (Least Significant Bit) [steganography](https://e
 The original implementation is in `Go` and can be found here: [stegify](https://github.com/DimitarPetrov/stegify)
 
 This plugin uses [go-mobile](https://github.com/golang/mobile) for generating platform native bindings
-and exposes `Dart` functions which can be used directly in you flutter mobile application!
+and exposes `Dart` functions which can be used directly in your flutter mobile application!
 
 ## API
 

@@ -4,7 +4,7 @@ Flutter plugin for fully transparent hiding any file within an image using [steg
 This technique is known as LSB (Least Significant Bit) [steganography](https://en.wikipedia.org/wiki/steganography)
 
 # Usage
-`flutter-stegify` plugin offers an easy to use `Dart` functions for steganography encodin/decoding.
+[flutter-stegify](https://pub.dev/packages/flutter_stegify) plugin offers an easy to use `Dart` functions for steganography encodin/decoding.
 The original implementation is in `Go` and can be found here: [stegify](https://github.com/DimitarPetrov/stegify)
 
 This plugin uses [go-mobile](https://github.com/golang/mobile) for generating platform native bindings

@@ -13,22 +13,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Plugin example app'),
-          ),
-          body: Stegify()),
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
+        ),
+        body: StegifyWidget(),
+      ),
     );
   }
 }
 
-class Stegify extends StatefulWidget {
+class StegifyWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return StegifyState();
   }
 }
 
-class StegifyState extends State<Stegify> {
+class StegifyState extends State<StegifyWidget> {
   bool decode;
   Image image;
 
@@ -61,7 +62,7 @@ class StegifyState extends State<Stegify> {
           if (this.decode) {
             // Decode result.jpeg into ../decoded.jpeg (should be lake image)
             // Here in decode we specify the result file extension explicitly.
-            await FlutterStegify.decode(directory.path + "/result.jpeg",
+            await Stegify.decode(directory.path + "/result.jpeg",
                 directory.path + "/decoded.jpeg");
 
             setState(() {
@@ -72,7 +73,7 @@ class StegifyState extends State<Stegify> {
           } else {
             // Encode lake image into the street image and save it under ../result.jpeg
             // the .jpeg extension comes from the carrier's extension (street.jpeg)
-            await FlutterStegify.encode(
+            await Stegify.encode(
                 streetImage.path, lakeImage.path, directory.path + "/result");
 
             setState(() {

@@ -1,8 +1,8 @@
 name: flutter_stegify
-description: A new flutter plugin project.
+description: Flutter plugin for steganography encoding and decoding files within an image using stegify API.
 version: 0.0.1
-author:
-homepage:
+author: Dimitar Petrov <d.n.petrovv@gmail.com>
+homepage: https://github.com/DimitarPetrov/stegify-flutter-plugin
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

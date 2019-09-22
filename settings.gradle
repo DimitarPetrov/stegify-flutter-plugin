@@ -1,0 +1,2 @@
+include ':steg'
+project(':steg').projectDir = new File('android/steg')

@@ -1,0 +1,8 @@
+framework module "Steg" {
+	header "ref.h"
+    header "Steg.objc.h"
+    header "Universe.objc.h"
+    header "Steg.h"
+
+    export *
+}

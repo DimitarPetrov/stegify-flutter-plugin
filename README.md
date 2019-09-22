@@ -12,7 +12,7 @@ and exposes `Dart` functions which can be used directly in you flutter mobile ap
 
 ## API
 
-```
+```dart
 void encode(String carrierFileName, String dataFileName, String resultFileName) async
 void decode(String carrierFileName, String resultFileName) async
 ``` 

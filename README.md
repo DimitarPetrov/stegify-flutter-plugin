@@ -3,6 +3,14 @@
 Flutter plugin for fully transparent hiding any file within an image using [stegify](https://github.com/DimitarPetrov/stegify) API. 
 This technique is known as LSB (Least Significant Bit) [steganography](https://en.wikipedia.org/wiki/steganography)
 
+## Demonstration
+
+| Carrier                                | Data                                | Result                                               |
+| ---------------------------------------| ------------------------------------|------------------------------------------------------|
+| ![Original File](https://github.com/DimitarPetrov/stegify/blob/master/examples/street.jpeg) | ![Encoded File](https://github.com/DimitarPetrov/stegify/blob/master/examples/lake.jpeg) | ![Encoded File](https://github.com/DimitarPetrov/stegify/blob/master/examples/test_decode.jpeg) |
+
+The `Result` file contains the `Data` file hidden in it. And as you can see it is fully transparent.
+
 # Usage
 [flutter-stegify](https://pub.dev/packages/flutter_stegify) plugin offers an easy to use `Dart` functions for steganography encodin/decoding.
 The original implementation is in `Go` and can be found here: [stegify](https://github.com/DimitarPetrov/stegify)

@@ -22,10 +22,7 @@ void decode(String carrierFileName, String resultFileName) async
 `decode` performs steganography decoding of data previously encoded by the Encode function.
 The data is decoded from file carrier and it is saved in separate new file
 
-> **_NOTE:_**  When `encoding` the file extension of result file is inherited from the carrier file and must not be specified
-explicitly in the `resultFileName` argument.
-
-> **_NOTE:_**  When `decoding` the result file won't have any file extension and therefore it should be specified explicitly
+> **_NOTE:_**  The result file won't have any file extension and therefore it should be specified explicitly
 in the `resultFileName` argument.
 
 ## Disclaimer

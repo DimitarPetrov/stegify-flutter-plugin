@@ -17,3 +17,6 @@ explicitly in the `resultFileName` argument.
 
 > **_NOTE:_**  When `decoding` the result file won't have any file extension and therefore it should be specified explicitly
 in the `resultFileName` argument.
+
+## 0.0.3
+Fix gradle setup.

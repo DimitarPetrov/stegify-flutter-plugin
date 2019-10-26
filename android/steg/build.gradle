@@ -1,2 +1,18 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file('steg.aar'))
+plugins {
+    id "org.golang.mobile.bind" version "0.2.11"
+}
+
+gobind {
+    // the identifier of the Go package to be used
+    pkg = "github.com/DimitarPetrov/stegify/steg"
+
+    /* GOPATH where the Go package is; check `go env` */
+    GOPATH = System.getProperty('user.home') + "/go"
+
+    /* Absolute path to the go binary */
+    // GO = "/PATH/TO/GO"
+
+    /* Optionally, set the absolute path to the gomobile binary if the
+    /* gomobile binary is not located in the GOPATH's bin directory. */
+    // GOMOBILE = "/PATH/TO/GOMOBILE"
+}

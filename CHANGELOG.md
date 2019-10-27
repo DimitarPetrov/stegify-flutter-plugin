@@ -20,3 +20,7 @@ in the `resultFileName` argument.
 
 ## 0.0.3
 Fix gradle setup.
+
+## 0.0.4
+
+Make the API async.

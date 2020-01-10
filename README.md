@@ -18,6 +18,14 @@ The original implementation is in `Go` and can be found here: [stegify](https://
 This plugin uses [go-mobile](https://github.com/golang/mobile) for generating platform native bindings
 and exposes `Dart` functions which can be used directly in your flutter mobile application!
 
+In order to import this plugin correctly you need to add the following lines to your **settings.gradle**:
+
+In the beginning add: `include ':steg'`
+
+In the end of the file add: `project(':steg').projectDir = new File(project(':flutter_stegify').projectDir, 'steg')`
+
+Something like [this](https://github.com/DimitarPetrov/stegify-mobile/blob/6b196690fa7f1db18eba387f49bec22f9a7de847/android/settings.gradle).
+
 ## API
 
 ```dart

@@ -35,3 +35,7 @@ In the beginning add: `include ':steg'`
 In the end of the file add: `project(':steg').projectDir = new File(project(':flutter_stegify').projectDir, 'steg')`
 
 Example usage of the plugin can be found [here](https://github.com/DimitarPetrov/stegify-mobile/blob/6b196690fa7f1db18eba387f49bec22f9a7de847/android/settings.gradle).
+
+## 0.0.6
+
+Increase Kotlin version to 1.3.10

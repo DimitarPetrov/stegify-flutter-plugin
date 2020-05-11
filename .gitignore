@@ -5,5 +5,5 @@
 .pub/
 .idea/
 .gradle/
-
+example/.flutter-plugins-dependencies
 build/

@@ -39,3 +39,7 @@ Example usage of the plugin can be found [here](https://github.com/DimitarPetrov
 ## 0.0.6
 
 Increase Kotlin version to 1.3.10
+
+## 0.1.0
+
+Perform steganography encoding/decoding in a separate thread in order to avoid blocking UI thread.

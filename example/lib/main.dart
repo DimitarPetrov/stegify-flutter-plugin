@@ -32,6 +32,7 @@ class StegifyWidget extends StatefulWidget {
 class StegifyState extends State<StegifyWidget> {
   bool decode;
   Image image;
+  bool _loading = false;
 
   @override
   void initState() {
@@ -47,19 +48,16 @@ class StegifyState extends State<StegifyWidget> {
       SizedBox(height: 10),
       CupertinoButton(
         color: Colors.blue,
-        child: Text(
-          this.decode ? "Decode lake from street" : "Encode lake into street",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: setUpButtonChild(),
         onPressed: () async {
           Directory directory = await getApplicationDocumentsDirectory();
           File streetImage = File(directory.path + "/street.jpeg");
           File lakeImage = File(directory.path + "/lake.jpeg");
 
           if (this.decode) {
+            setState(() {
+              _loading = true;
+            });
             // Decode result.jpeg into ../decoded.jpeg (should be lake image)
             // Here in decode we specify the result file extension explicitly.
             await Stegify.decode(directory.path + "/result.jpeg",
@@ -67,10 +65,14 @@ class StegifyState extends State<StegifyWidget> {
 
             setState(() {
               this.decode = !this.decode;
+              _loading = false;
               // Display the decoded image (should be lake image)
               image = Image.file(File(directory.path + "/decoded.jpeg"));
             });
           } else {
+            setState(() {
+              _loading = true;
+            });
             // Encode lake image into the street image and save it under ../result.jpeg
             // the .jpeg extension comes from the carrier's extension (street.jpeg)
             await Stegify.encode(
@@ -78,6 +80,7 @@ class StegifyState extends State<StegifyWidget> {
 
             setState(() {
               this.decode = !this.decode;
+              _loading = false;
               // Display the encoded image (should be street image with lake image hidden in it)
               image = Image.file(File(directory.path + "/result.jpeg"));
             });
@@ -96,6 +99,21 @@ class StegifyState extends State<StegifyWidget> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
     ]);
+  }
+
+  Widget setUpButtonChild() {
+    if (!_loading) {
+      return Text(
+        this.decode ? "Decode lake from street" : "Encode lake into street",
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      );
+    }
+    return CircularProgressIndicator(
+      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+    );
   }
 
   void _copyImageFromAsset(String imageName) async {

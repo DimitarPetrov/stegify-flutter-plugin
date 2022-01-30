@@ -43,7 +43,7 @@ The data is decoded from file carrier and it is saved in separate new file
 > **_NOTE:_**  The result file won't have any file extension and therefore it should be specified explicitly
 in the `resultFileName` argument.
 
-### Prerequisites - Prior version 0.2.0
+## Prerequisites - Prior version 0.2.0
 
 **This steps should not be required starting with version 0.2.0**
 

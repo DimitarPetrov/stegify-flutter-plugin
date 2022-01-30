@@ -1,5 +1,5 @@
 plugins {
-    id "org.golang.mobile.bind" version "0.2.11"
+    id "org.golang.mobile.bind" version "0.2.13"
 }
 
 gobind {
@@ -10,7 +10,7 @@ gobind {
     GOPATH = System.getProperty('user.home') + "/go"
 
     /* Absolute path to the go binary */
-    // GO = "/PATH/TO/GO"
+    // GO = System.getProperty('user.home') + "/go1.17.6/go1.17.6/bin/go"
 
     /* Optionally, set the absolute path to the gomobile binary if the
     /* gomobile binary is not located in the GOPATH's bin directory. */

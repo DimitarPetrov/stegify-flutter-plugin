@@ -22,8 +22,8 @@ and exposes `Dart` functions which can be used directly in your flutter mobile a
 
 Since `flutter-stegify` is exposing `Go` implementation through flutter plugin some `Go` dependencies are required:
 - `Go` is installed
-- [go-mobile](https://github.com/golang/go/wiki/Mobile) is installed
-- `stegify` sources are present in your `GOPATH`, in order to pull `stegify` execute `go get -u github.com/DimitarPetrov/stegify`
+- [go-mobile](https://github.com/golang/go/wiki/Mobile) is installed. Make sure to download the sources in your `GOPATH` as well with: `GO111MODULE=off go get golang.org/x/mobile/cmd/gomobile`
+- `stegify` sources are present in your `GOPATH`, in order to pull `stegify` execute `GO111MODULE=off go get github.com/DimitarPetrov/stegify`
 
 > NOTE: `stegify` does not rely on any external dependencies, therefore it is not a module. This means that `go mod` support should be explicity disabled by an environment variable: `export GO111MODULE=off`
 

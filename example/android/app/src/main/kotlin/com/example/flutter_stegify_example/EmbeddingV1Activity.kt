@@ -1,4 +1,4 @@
-package io.flutter.plugins.batteryexample
+package com.example.flutter_stegify_example
 
 import android.os.Bundle
 import com.example.flutter_stegify.FlutterStegifyPlugin

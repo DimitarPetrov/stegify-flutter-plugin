@@ -76,7 +76,7 @@ class StegifyState extends State<StegifyWidget> {
             // Encode lake image into the street image and save it under ../result.jpeg
             // the .jpeg extension comes from the carrier's extension (street.jpeg)
             await Stegify.encode(
-                streetImage.path, lakeImage.path, directory.path + "/result");
+                streetImage.path, lakeImage.path, directory.path + "/result.jpeg");
 
             setState(() {
               this.decode = !this.decode;

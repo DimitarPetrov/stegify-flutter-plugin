@@ -1,7 +1,11 @@
 package com.example.flutter_stegify
 
+import androidx.annotation.NonNull;
+
 import android.os.Handler
 import android.os.Looper
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
@@ -11,7 +15,8 @@ import steg.Steg
 import kotlin.concurrent.thread
 
 /** FlutterStegifyPlugin  */
-class FlutterStegifyPlugin : MethodCallHandler {
+class FlutterStegifyPlugin : MethodCallHandler, FlutterPlugin {
+    private lateinit var channel: MethodChannel
 
     private inline fun <reified T> readArgument(args: List<*>, index: Int): T {
         if (index < args.size) {
@@ -91,12 +96,21 @@ class FlutterStegifyPlugin : MethodCallHandler {
         }
     }
 
+    override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+        this.channel = MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_stegify")
+        this.channel.setMethodCallHandler(this)
+    }
+
+    override fun onDetachedFromEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+        this.channel.setMethodCallHandler(null)
+    }
+
     companion object {
         /** Plugin registration.  */
 
         @JvmStatic
         fun registerWith(registrar: Registrar) {
-            val channel = MethodChannel(registrar.messenger(), "flutter_stegify")
+            var channel = MethodChannel(registrar.messenger(), "flutter_stegify")
             channel.setMethodCallHandler(FlutterStegifyPlugin())
         }
     }

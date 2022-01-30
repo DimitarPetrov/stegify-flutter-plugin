@@ -47,3 +47,9 @@ Perform steganography encoding/decoding in a separate thread in order to avoid b
 ## 0.1.1
 
 Improve documentation with `Go` specific prerequisites.
+
+## 0.2.0
+
+- Supporting the new Android plugins APIs with V2 Embedding
+- Simplify prerequisites. Prior this version fully function Go environment with gomobile and stegify installed was required. 
+  This is not the case anymore as the needed packages are embedded in the plugin.

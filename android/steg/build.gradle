@@ -1,18 +1,23 @@
-plugins {
-    id "org.golang.mobile.bind" version "0.2.11"
-}
+configurations.maybeCreate("default")
+artifacts.add("default", file('steg.aar'))
 
-gobind {
-    // the identifier of the Go package to be used
-    pkg = "github.com/DimitarPetrov/stegify/steg"
+// AUTOMATIC_ANDROID_BINDINGS Include this to enable on-demand (on each build) android bindings generation.
 
-    /* GOPATH where the Go package is; check `go env` */
-    GOPATH = System.getProperty('user.home') + "/go"
-
-    /* Absolute path to the go binary */
-    // GO = "/PATH/TO/GO"
-
-    /* Optionally, set the absolute path to the gomobile binary if the
-    /* gomobile binary is not located in the GOPATH's bin directory. */
-    // GOMOBILE = "/PATH/TO/GOMOBILE"
-}
+//plugins {
+//    id "org.golang.mobile.bind" version "0.2.13"
+//}
+//
+//gobind {
+//    // the identifier of the Go package to be used
+//    pkg = "github.com/DimitarPetrov/stegify/steg"
+//
+//    /* GOPATH where the Go package is; check `go env` */
+//    GOPATH = System.getProperty('user.home') + "/go"
+//
+//    /* Absolute path to the go binary */
+//    // GO = System.getProperty('user.home') + "/go1.17.6/go1.17.6/bin/go"
+//
+//    /* Optionally, set the absolute path to the gomobile binary if the
+//    /* gomobile binary is not located in the GOPATH's bin directory. */
+//    // GOMOBILE = "/PATH/TO/GOMOBILE"
+//}
